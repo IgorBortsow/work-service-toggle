@@ -1,0 +1,114 @@
+.container {
+  min-height: 100vh;
+  padding: 20px 9%;
+  background: $bg-color2;
+  padding-bottom: 80px;
+
+  .title {
+    text-align: center;
+    color: $text-color;
+    font-size: 50px;
+    padding: 15px 0;
+    text-transform: uppercase;
+  }
+
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .box {
+      flex: 1 1 300px;
+      text-align: center;
+      background: $bg-color;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+
+      i {
+        font-size: 40px;
+        height: 80px;
+        width: 80px;
+        line-height: 80px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        margin: 10px 0;
+        color: $text-color;
+      }
+
+      h3 {
+        font-size: 25px;
+        color: $text-color;
+      }
+
+      p {
+        font-size: 18px;
+        color: $text-color2;
+        padding: 5px;
+      }
+
+      .number {
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        font-weight: bolder;
+        font-size: 40px;
+        color: #fff;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: 0.3s linear;
+        background: #42b530;
+        clip-path: circle(28% at 5% 0);
+      }
+
+      &:hover::before {
+        clip-path: circle(100%);
+      }
+
+      &:hover > * {
+        color: #fff;
+      }
+    }
+  }
+}
+
+#theme-toggler {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  padding: 15px 20px;
+  font-size: 30px;
+  background: $bg-color2;
+  color: $text-color;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  z-index: 1000;
+
+  &:hover {
+    background: #42b530;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 80px 20px;
+
+    .title {
+      font-size: 35px;
+    }
+  }
+}
